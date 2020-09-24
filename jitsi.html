@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jitsi Widget</title>
+<link href="bundles/1c92c9d6b0f5bd0d188c/jitsi.css" rel="stylesheet"></head>
+<body>
+<div id="jitsiContainer"><!-- the js will put the conference here --></div>
+<div id="joinButtonContainer">
+    <div class="joinConferenceFloating">
+        <div class="joinConferencePrompt">
+            <!-- TODO: i18n -->
+            <h2>Jitsi Video Conference</h2>
+            <div id="widgetActionContainer">
+                <button type="button" id="joinButton">Join Conference</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- This script is not webpacked, and the script is downloaded at build time -->
+<script src="./jitsi_external_api.min.js"></script>
+<script type="text/javascript" src="bundles/1c92c9d6b0f5bd0d188c/jitsi.js"></script></body>
+</html>
