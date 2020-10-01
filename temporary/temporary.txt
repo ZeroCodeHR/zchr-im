@@ -1,0 +1,47 @@
+Creating an Account
+curl -XPOST -d '{"username":"sarath", "password":"T0nwhy@$$@", "auth": {"type":"m.login.dummy"}}' "https://matrix.jbrec-gcp.ml/_matrix/client/r0/register"
+
+{
+    "access_token": "MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjdjaWQgdXNlcl9pZCA9IEBzYXJhdGg6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0gWVhiTmdoRjRRN3FuWStfTgowMDJmc2lnbmF0dXJlIKcwzAEvsfxkVOKib-46WuARTVZCzszz_KD3UnLgPuUkCg",
+    "device_id": "ILDVEMWCVB",
+    "home_server": "jbrec-gcp.ml",
+    "user_id": "@sarath:jbrec-gcp.ml"
+}
+
+
+Logging in
+
+curl -XPOST -d '{"type":"m.login.password", "user":"sarath", "password":"T0nwhy@$$@"}' "https://matrix.jbrec-gcp.ml/_matrix/client/r0/login"
+
+{
+    "access_token": "MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjdjaWQgdXNlcl9pZCA9IEBzYXJhdGg6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0gcTJyXnlWNkFLQFF5c0RaQgowMDJmc2lnbmF0dXJlIGynpOCRbHgoXHh4kN8y2GRc0C13I7O7wnWW069_l0qVCg",
+    "device_id": "YSSPKURRNG",
+    "home_server": "jbrec-gcp.ml",
+    "user_id": "@sarath:jbrec-gcp.ml"
+}
+
+Creating a Room
+
+curl -XPOST -d '{"room_alias_name":"tutorial"}' "https://matrix.jbrec-gcp.ml/_matrix/client/r0/createRoom?access_token=MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjdjaWQgdXNlcl9pZCA9IEBzYXJhdGg6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0gWVhiTmdoRjRRN3FuWStfTgowMDJmc2lnbmF0dXJlIKcwzAEvsfxkVOKib-46WuARTVZCzszz_KD3UnLgPuUkCg"
+
+{
+    "room_alias": "#tutorial:jbrec-gcp.ml",
+    "room_id": "!xhpyvPHLNCSvXfPGBp:jbrec-gcp.ml"
+}
+
+Sending Message
+curl -XPOST -d '{"msgtype":"m.text", "body":"hello"}' "https://matrix.jbrec-gcp.ml/_matrix/client/r0/rooms/%21xhpyvPHLNCSvXfPGBp:jbrec-gcp.ml/send/m.room.message?access_token=MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjdjaWQgdXNlcl9pZCA9IEBzYXJhdGg6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0gWVhiTmdoRjRRN3FuWStfTgowMDJmc2lnbmF0dXJlIKcwzAEvsfxkVOKib-46WuARTVZCzszz_KD3UnLgPuUkCg"
+
+{
+    "event_id": "$VHYdfbzPGnClXHYqpYVMirBhMkOBDCAeF0UhEgtgYZc"
+}
+
+Getting all states
+curl -XGET "https://matrix.jbrec-gcp.ml/_matrix/client/r0/sync?access_token=MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjdjaWQgdXNlcl9pZCA9IEBzYXJhdGg6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0gWVhiTmdoRjRRN3FuWStfTgowMDJmc2lnbmF0dXJlIKcwzAEvsfxkVOKib-46WuARTVZCzszz_KD3UnLgPuUkCg"
+
+
+Getting all states from dates
+curl --globoff -XGET 'https://matrix.jbrec-gcp.ml/_matrix/client/r0/sync?filter={"room":{"timeline":{"limit":1}}}&access_token=MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjdjaWQgdXNlcl9pZCA9IEBzYXJhdGg6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0gWVhiTmdoRjRRN3FuWStfTgowMDJmc2lnbmF0dXJlIKcwzAEvsfxkVOKib-46WuARTVZCzszz_KD3UnLgPuUkCg'
+
+
+
