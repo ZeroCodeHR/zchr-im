@@ -28,7 +28,7 @@
    ```json
     {
         "user_id": "@sarath.oruganti:jbrec-gcp.ml",
-        "access_token"  MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMzBjaWQgdXNlcl9pZCA9IEBzYXJhdGgub3J1Z2FudGk6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0geGlld3dzMEhUVjFNRV9ZWQowMDJmc2lnbmF0dXJlIEzk9ny-iFm3nlcxQtjU4xLb59eMABlyqw6seeHw4Xe2Cg",
+        "access_token":"MDAxYWxvY2F0aW9uIGpicmVjLWdjcC5tbAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMzBjaWQgdXNlcl9pZCA9IEBzYXJhdGgub3J1Z2FudGk6amJyZWMtZ2NwLm1sCjAwMTZjaWQgdHlwZSA9IGFjY2VzcwowMDIxY2lkIG5vbmNlID0geGlld3dzMEhUVjFNRV9ZWQowMDJmc2lnbmF0dXJlIEzk9ny-iFm3nlcxQtjU4xLb59eMABlyqw6seeHw4Xe2Cg",
         "home_server": "jbrec-gcp.ml",
         "device_id": "TFFLJTASXI"
     }
